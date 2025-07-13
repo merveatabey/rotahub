@@ -19,7 +19,7 @@ const handleLogin = async (e) => {
   e.preventDefault();
 
 try{
-  const response = await axios.post("https://localhost:6703/api/user/Auth/login", {email, password});
+  const response = await axios.post("https://localhost:6703/api/Auth/login", {email, password});
   const token = response.data.token;
   localStorage.setItem('token', token);   //token'ı localstorage'ye kaydet
   console.log("login succesfully : " , token);
@@ -34,7 +34,7 @@ try{
   return(
    <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Welcome to ROTA</h2>
+        <h2 className="login-title">Welcome to Tatilia</h2>
         <form className="login-form" onSubmit={handleLogin}>
           <input
             type="email"
@@ -64,8 +64,8 @@ try{
             
         </span>
       </p>
-          <p className="login-footer">Forgot your password?</p>
-          onClick = {() => navigate('/forgot-password')}
+          <p className="login-footer"  onClick = {() => navigate('/forgot-password')} >Forgot your password?</p>
+         
         </form>
       </div>
     </div>

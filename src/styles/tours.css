@@ -1,0 +1,88 @@
+.tours-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tours-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #007acc;
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+  gap: 1.5rem;
+}
+
+.tour-card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2);
+}
+
+.tour-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.tour-content h3 {
+  margin: 0 0 0.5rem;
+  color: #004d99;
+}
+
+.tour-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+  min-height: 48px;
+}
+
+.tour-days {
+  font-weight: 600;
+  color: #007acc;
+}
+
+.detail-button {
+  border: none;
+  background: #007acc;
+  color: white;
+  padding: 0.7rem;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0 0 8px 8px;
+  transition: background 0.3s ease;
+}
+
+.detail-button:hover {
+  background: #005f99;
+}

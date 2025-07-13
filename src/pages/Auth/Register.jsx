@@ -19,7 +19,7 @@ const  Register = () => {
 
         try {
             
-            const response = await axios.post("https://localhost:6703/api/user/Auth/register", { email, password, fullName });
+            const response = await axios.post("https://localhost:6703/api/Auth/register", { email, password, fullName });
             const token = response.token.data;
             localStorage.setItem('token', token);
             console.log("registration succesful", token);

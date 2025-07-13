@@ -1,0 +1,39 @@
+.tour-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+  width: 300px;
+}
+
+.tour-card:hover {
+  transform: scale(1.02);
+}
+
+.tour-card-header {
+  position: relative;
+}
+
+.tour-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.tour-card-body {
+  padding: 1rem;
+}
+
+.tour-card-footer {
+  padding: 0 1rem 1rem;
+  text-align: right;
+}
