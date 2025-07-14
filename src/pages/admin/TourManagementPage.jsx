@@ -208,3 +208,7 @@ const TourManagementPage = () => {
 };
 
 export default TourManagementPage;
+
+
+
+// rehber seçiminde prje patlıyor
