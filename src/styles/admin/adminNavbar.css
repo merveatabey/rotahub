@@ -1,0 +1,45 @@
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: #7a6f4f; 
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 101;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-navbar__left {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.admin-navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-navbar__user {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ikon ve metin arası boşluk */
+}
+
+.user-icon {
+  font-size: 25px;
+  color: white;
+  margin-top: 1px; /* dikey ortalama için hafif ayar */
+}
+

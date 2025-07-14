@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/navbar.css"; // Navbar stillerini içe aktarın
+import TourSearch from "./tourSearch";
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -71,16 +72,7 @@ const Navbar = () => {
         </div>
 
         {/* Arama kutusu */}
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Ne tür bir tatil istersiniz?"
-            aria-label="Arama"
-          />
-          <button aria-label="Ara">
-            <i className="bi bi-search"></i>
-          </button>
-        </div>
+       <TourSearch />
       </nav>
     </header>
   );

@@ -1,14 +1,28 @@
 .login-container {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #1abc9c, #f39c12); /* yeşilden turuncuya geçiş */
+  background: linear-gradient(135deg, #b2f7ef, #fceabb, #f8b195); /* soft havalı yeşil, sarı, pembe tonları */
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Segoe UI", sans-serif;
 }
 
+/* Arka plana solukluk ve gölge efekti için overlay */
+.login-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.18); /* soluk koyu gölge */
+  box-shadow: 0 0 120px 40px rgba(44, 62, 80, 0.18);
+  z-index: 1;
+}
+
+
+/* Kartın üstte kalması için z-index */
 .login-card {
+  position: relative;
+  z-index: 2;
   background-color: rgba(255, 255, 255, 0.95);
   padding: 3rem 2.5rem;
   border-radius: 15px;
@@ -19,7 +33,6 @@
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .login-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(26, 188, 156, 0.5);
@@ -77,7 +90,7 @@
 }
 
 .login-footer {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
   color: #16a085;
   cursor: pointer;
@@ -86,4 +99,7 @@
 
 .login-footer:hover {
   text-decoration: underline;
+}
+.login-form p {
+  margin: 4px 0;
 }

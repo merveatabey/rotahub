@@ -113,18 +113,27 @@
   border-radius: 6px;
 }
 
-/* Arama kutusu */
+/* Arama kutusu container */
 .search-box {
+  position: relative; /* arama sonuçları için */
+  display: flex;
+  flex-direction: column;
+  max-width: 280px; /* navbar ile uyumlu */
+  width: 100%;
+}
+
+/* Form */
+.search-form {
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.85);
   border-radius: 24px;
   padding: 6px 12px;
   height: 36px;
-  min-width: 280px;
 }
 
-.search-box input {
+/* Input */
+.search-input {
   border: none;
   outline: none;
   background: transparent;
@@ -134,14 +143,66 @@
   color: #333;
 }
 
-.search-box input::placeholder {
+.search-input::placeholder {
   color: #666;
 }
 
-.search-box button {
+/* Buton */
+.search-button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-  color: #222; /* koyu gri */
+  font-size: 1.5rem; /* ikon boyutu */
+  color: inherit;
+  padding: 0;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button i {
+  margin-right: 20px;
+  font-size: 18px; /* ikon boyutu */
+}
+.search-button:hover {
+  color: #b35400;
+}
+
+/* Arama sonuçları paneli */
+.search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1500;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  width: 100%; /* Arama kutusu genişliği kadar */
+  box-sizing: border-box;
+}
+
+/* Arama sonucu item */
+.search-result-item {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight:  bold;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+  background-color: #f5f5f5;
+  outline: none;
+  color: #b35400;
 }

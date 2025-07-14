@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Login = () => {
+const AdminLogin = () => {
 
 
 const [email, setEmail] = useState("");
@@ -19,13 +19,13 @@ const handleLogin = async (e) => {
   e.preventDefault();
 
 try{
-  const response = await axios.post("https://localhost:6703/api/Auth/login", {email, password});
+  const response = await axios.post("https://localhost:6703/api/Auth/adminlogin", {email, password});
   const token = response.data.token;
   localStorage.setItem('token', token);   //token'ı localstorage'ye kaydet
   console.log("login succesfully : " , token);
 
   if(response.status === 200) {
-    navigate('/HomePage'); // Redirect to home page on successful login
+    navigate('/AdminHome'); // Redirect to home page on successful login
   } 
 } catch(err){
   console.log(err.response?.data?.message || "Login failed");
@@ -39,7 +39,7 @@ try{
   return(
    <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Welcome to Tatilia</h2>
+        <h2 className="login-title">Welcome to Tatilia <br/> Admin Panel</h2>
         <form className="login-form" onSubmit={handleLogin}>
           <input
             type="email"
@@ -59,21 +59,8 @@ try{
             Login
           </button>
           {error && <p style={{color: 'red'}}>{error}</p>}
-            <p>
-        Don't have an account?{' '}
-        <span
-          style={{ color: 'orange', cursor: 'pointer', textDecoration: 'underline' }}
-          onClick={() => navigate('/register')}
-        >
-          Register
-            
-        </span>
-      </p>
+        
           <p className="login-footer"  onClick = {() => navigate('/forgot-password')} >Forgot your password?</p>
-            <p
-            className="login-footer" style={{color : 'darkblue'}} onClick={() => navigate('/admin-login')} >
-            Admin Login
-          </p>
           
          
         </form>
@@ -83,7 +70,7 @@ try{
 
   )
 }
-export default Login;
+export default AdminLogin;
   
 
 
